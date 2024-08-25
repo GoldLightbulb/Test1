@@ -1,0 +1,55 @@
+'''
+functions
+default arguments
+return values
+'''
+
+
+
+# this is a global variable that can be used everywhere
+blockchain = []
+
+
+def get_last_blockchain_value():
+    # use global variable not the oonr inside
+    #global blockchain
+    return blockchain[-1]
+
+# "last transaction" is a default argument used to append value on block
+# this function won't work because it's executing the get last blockchain vlaue function
+# regardless of there being a [1] in the add value below
+'''
+def add_value(transaction_amount, last_transaction = get_last_blockchain_value()):
+    blockchain.append([last_transaction, transaction_amount])
+
+add_value(2, [1])
+'''
+
+# this is an example of how you would pass a default value
+# transaction amount and last transaction here are defined as local variabes defined inside (as an argument not like a "variable = something")
+def add_value(transaction_amount, last_transaction = [1]):
+    blockchain.append([last_transaction, transaction_amount])
+
+def get_user_input():
+    user_input =  float(input('your transaction amount please:'))
+    return user_input
+
+ts_amount = get_user_input()
+add_value(ts_amount, 2)
+
+ts_amount = get_user_input()
+# last transaction passed as the function value
+add_value(ts_amount, get_last_blockchain_value())
+
+ts_amount = get_user_input()
+add_value(ts_amount, get_last_blockchain_value())
+
+# don't use because it prints out the wrong order
+# add_value(get_last_blockchain_value(), 0.9)
+
+### do this instead (keyword agruments)
+'''add_value(last_transaction = get_last_blockchain_value(), transaction_amount = 0.9)'''
+
+
+print(blockchain)
+

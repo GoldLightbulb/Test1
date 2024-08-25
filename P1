@@ -1,0 +1,58 @@
+# REPL datatype (read evaluate print loop)
+
+
+'''
+print('hello' * 10)
+print(5 / 10)
+print(44 // 10)
+print(3 ** 10)
+print(20 % 10)
+
+#exponent 10
+# mssing floating point precision
+print(1e10)
+print(1-0.99)
+print(1- 0.9- 0.1)
+'''
+# strings
+# back slash is to keep the heiphen
+
+'''
+name = 'I\'m pretty cool!'
+print(name)
+
+longer_text = ' hyeeeee'
+longer_text = ' add ur text '
+2 span multiple lines'
+
+print(longer_text)
+'''
+
+# lists
+
+blockchain = [1, 8.6, 5.1, "text", [10e2]]
+print(blockchain[4])
+print(blockchain[2] + 2)
+
+# remove list items
+
+# add element to end of list
+blockchain.append(3)
+
+# remove the largest index item, in this case its 3
+blockchain.pop()
+
+# functions to add items
+
+def greet():
+    print('hello')
+
+greet()
+greet()
+
+
+
+
+
+
+

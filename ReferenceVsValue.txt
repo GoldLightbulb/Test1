@@ -1,0 +1,142 @@
+
+
+list = [a,b,c,d,e,f]
+# assigned old list into new dup_list
+# the new variable is still refering to the old list because the list itself isn't copied
+# more complex data structures like lists are stored in memory only ONCE
+# so they're not duplicated just because we store them in another variable
+dup_list = list
+
+# instead you can think of the list being stored somewhere in memory (the only thing really being called into memory is the address)
+# or just the reference
+
+# **** therefore if we use a new variable and we access the first element in the list and we assign a value of sets
+# we'll get something like this 
+
+dup_list[0] = Z     
+# outpu (after doing the dup_list[0]) : [Z,b,c,d,e,f]
+
+
+# a way to copy a list is to do it this way
+#
+# dup_list = list[:]    (this will return a new list, pretty much a range selector)
+#
+# the range selector [:] creates a new list, populates it with the selected elements and gives that new list back to you
+# so the new list is stored in dup_list
+#
+# dup_list[0] = [Z,b,c,d,e,f]
+ 
+ but my_list would still be  = [a, b, c, d, e, f] because it was un accessed
+
+
+
+ my_list = [1, 2, 3, 4]
+ second_list = my_list
+ second_list[0] 
+
+################
+
+range selector
+
+simple_list = [1,2,3,4,5]
+new_list = [simple_list[0],simple_list[1],simple_list[2]]
+
+new list will output [1,2,3]
+
+now lets use the range selector
+
+# start at index zero and end at index three so in this case it will output [1, 2, 3]
+new_list = simple_list[0:3]
+
+new_list = simple_list[:-1] outputs every element in the simple_list execpt for the last value (right most element is excluded)
+
+
+
+new_list[0] = 'hello'
+['hello', 2, 3]
+
+new list being set equal to hello won't affect the simple_list unless you directly change it therefore
+
+###################
+
+tuple = (1,2,3,4)
+
+tuple[0:2]   outputs (1, 2)
+
+tuple[0:-1] outputs (1,2,3,)
+
+a = {'mota', 'chota', 'bhai'}
+
+indexing tuples won't work in variable 'a'
+
+#####################
+what happens when you have a data structure that includes more complex data structures
+
+stats = [{'name': 'max'}, {'age': 29}]
+copied_stats = stats[:]
+copied_stats[0]['name'] = 'Manuel'
+
+outputing copied_stats will give you manuel's name and age
+this should also be expected when you just output stats alone, but it will also output Manuel as well
+
+
+so how do you properly copy a dictionary?
+
+
+#################################
+
+simple_list = [1,2,3,4]
+second_list = [1,2,3,4]
+simple_list = second_list (will return true)
+
+# what happens if we want to compare whether or not if they're the same objects or not?
+(in memory they're two distinct objects so they're False)
+
+
+
+
+
+####################
+
+simple_list = [1,2,3,4]
+
+
+# allows user to extend a called list
+simple_list.extend([5, 6, 7])
+# outputs [1, 2, 3, 4, 5, 6, 7]
+
+# deletes index zero from simple_list
+del(simple_list[0])
+
+d = {'name': 'Max'}
+d.items()
+# outputs a list of the dict items as a tuple, useful for getting access to both keys and values
+del(d['name']) # this deletes the name from the dictionary and it later becomes an empty dictionary
+
+
+# another example
+
+for key, value in d.items():
+    print(key, value)           # outputs --> name Max
+
+tuple = (1,2,3)
+tuple.index(1)
+
+del(tuple[0])  (tuples can't be edited or deleted so it will return an error)
+
+
+set = {'tom', 'dick', 'henry'}
+print(set)
+del(s['tom'])  # also can't delete
+
+
+#################################
+
+
+
+
+
+
+
+
+

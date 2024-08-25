@@ -1,0 +1,21 @@
+new_list = [True, True, False]
+any(new_list)
+all(new_list)
+# 'any' checks if list is has at least one true element in it (in this case it will return true)
+# 'all' checks to see whether all values in the list are true
+
+when do we have a list of booleans?
+
+number_list = [1,2,3,-5]
+number_list > 0 (returns an error)
+# so type like a list comphrension
+
+e = [el for el in number list if el > 0]      [outputs --> 1, 2, 3]
+
+# now lets set it up such that they're bigger than the other
+
+e = [el > 0 for el in number list]      [outputs --> True, True, True, False] (for each index)
+
+
+# for all elements in the list
+e = all([el > 0 for el in number list])      [outputs --> False] (because not all elements in the list are greater than zero)
